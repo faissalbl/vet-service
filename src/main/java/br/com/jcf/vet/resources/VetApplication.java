@@ -1,4 +1,4 @@
-package br.com.jcf.resources;
+package br.com.jcf.vet.resources;
 
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;
