@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tomee>	
+	<Resource id="vet-ds" type="DataSource">
+	    JdbcDriver          com.mysql.jdbc.Driver
+	    JdbcUrl             jdbc:mysql://localhost:3306/vet
+	    UserName            root
+	    Password            admin
+	    JtaManaged          true
+	    DefaultAutoCommit   false
+	</Resource>
+</tomee>
