@@ -5,7 +5,10 @@
 	<persistence-unit name="vet-pu" transaction-type="JTA">
 		<provider>org.apache.openjpa.persistence.PersistenceProviderImpl</provider>
 		<jta-data-source>vet-ds</jta-data-source>
+		<class>br.com.jcf.vet.entity.GenericEntity</class>
 		<class>br.com.jcf.vet.entity.Animal</class>
+		<class>br.com.jcf.vet.entity.TipoAnimal</class>
+		<class>br.com.jcf.vet.entity.Raca</class>
 		<properties>
 			<property name="openjpa.ConnectionDriverName" value="com.mysql.jdbc.Driver" />
 			<property name="openjpa.Log" value="DefaultLevel=WARN, Runtime=INFO, Tool=INFO, SQL=TRACE" />

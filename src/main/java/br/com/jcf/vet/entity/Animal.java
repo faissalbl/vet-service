@@ -1,28 +1,33 @@
 package br.com.jcf.vet.entity;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.SequenceGenerator;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.TableGenerator;
-import javax.persistence.Version;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
-public class Animal {
-
-	@Id
-	@TableGenerator(name="animalSeqTableGen", table="animalSeqTable")
-	@GeneratedValue(strategy=GenerationType.TABLE, generator="animalSeqTableGen")
-	private Long id;
+public class Animal extends GenericEntity<Long> {
 	
-	@Column
+	protected Long id;
+	
 	private String nome;
 	
-	@Version
-	private Integer version;
+	private TipoAnimal tipoAnimal;
 	
+	private Raca raca;
+	
+	private String codChip;
+	
+	private Date dtNascimento;
+
 	public Animal() {
 		
 	}
@@ -32,29 +37,65 @@ public class Animal {
 		this.nome = nome;
 	}
 
+	@Id
+	@TableGenerator(name="animalSeqTableGen", table="animalSeqTable")
+	@GeneratedValue(strategy=GenerationType.TABLE, generator="animalSeqTableGen")
+	@Override
 	public Long getId() {
 		return id;
 	}
-
+	
+	@Override
 	public void setId(Long id) {
 		this.id = id;
 	}
-
+	
+	@Column
 	public String getNome() {
 		return nome;
 	}
-
+	
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
 
-	public Integer getVersion() {
-		return version;
+	@ManyToOne
+	@JoinColumn(name = "ID_TIPOANIMAL")
+	public TipoAnimal getTipoAnimal() {
+		return tipoAnimal;
 	}
 
-	public void setVersion(Integer version) {
-		this.version = version;
+	public void setTipoAnimal(TipoAnimal tipoAnimal) {
+		this.tipoAnimal = tipoAnimal;
 	}
-	
-	
+
+	@ManyToOne
+	@JoinColumn(name = "ID_RACA")
+	public Raca getRaca() {
+		return raca;
+	}
+
+	public void setRaca(Raca raca) {
+		this.raca = raca;
+	}
+
+	@Column
+	public String getCodChip() {
+		return codChip;
+	}
+
+	public void setCodChip(String codChip) {
+		this.codChip = codChip;
+	}
+
+	@Column @Temporal(TemporalType.DATE)
+	public Date getDtNascimento() {
+		return dtNascimento;
+	}
+
+	public void setDtNascimento(Date dtNascimento) {
+		this.dtNascimento = dtNascimento;
+	}
+
+
 }
