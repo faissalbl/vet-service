@@ -5,15 +5,22 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.TableGenerator;
 import javax.persistence.Version;
 
 @Entity
 public class Animal {
 
+	@Id
+	@TableGenerator(name="animalSeqTableGen", table="animalSeqTable")
+	@GeneratedValue(strategy=GenerationType.TABLE, generator="animalSeqTableGen")
 	private Long id;
 	
+	@Column
 	private String nome;
 	
+	@Version
 	private Integer version;
 	
 	public Animal() {
@@ -25,8 +32,6 @@ public class Animal {
 		this.nome = nome;
 	}
 
-	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
 	public Long getId() {
 		return id;
 	}
@@ -35,7 +40,6 @@ public class Animal {
 		this.id = id;
 	}
 
-	@Column
 	public String getNome() {
 		return nome;
 	}
@@ -44,7 +48,6 @@ public class Animal {
 		this.nome = nome;
 	}
 
-	@Version
 	public Integer getVersion() {
 		return version;
 	}
