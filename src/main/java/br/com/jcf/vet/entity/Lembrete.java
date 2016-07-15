@@ -34,9 +34,8 @@ public class Lembrete extends GenericEntity<Long> {
 		
 	}
 
-	@Id
-	@TableGenerator(name="lembreteSeqTableGen", table="lembreteSeqTable")
-	@GeneratedValue(strategy=GenerationType.TABLE, generator="lembreteSeqTableGen")
+	@Id @Column(name = "ID")
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Override
 	public Long getId() {
 		return id;
@@ -47,7 +46,7 @@ public class Lembrete extends GenericEntity<Long> {
 		this.id = id;
 	}
 
-	@Column
+	@Column(name="DS_LEMBRETE")
 	public String getDesc() {
 		return desc;
 	}
@@ -66,6 +65,7 @@ public class Lembrete extends GenericEntity<Long> {
 		this.animal = animal;
 	}
 
+	@Column(name="FREQUENCIA")
 	@Enumerated(EnumType.STRING)
 	public Frequencia getFrequencia() {
 		return frequencia;
@@ -75,6 +75,7 @@ public class Lembrete extends GenericEntity<Long> {
 		this.frequencia = frequencia;
 	}
 
+	@Column(name="DATA")
 	@Temporal(TemporalType.TIMESTAMP)
 	public Date getData() {
 		return data;
@@ -84,7 +85,7 @@ public class Lembrete extends GenericEntity<Long> {
 		this.data = data;
 	}
 
-	@Column
+	@Column(name="LIDO")
 	public Boolean getLido() {
 		return lido;
 	}

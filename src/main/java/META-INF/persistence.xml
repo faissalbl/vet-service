@@ -9,8 +9,10 @@
 		<class>br.com.jcf.vet.entity.Animal</class>
 		<class>br.com.jcf.vet.entity.TipoAnimal</class>
 		<class>br.com.jcf.vet.entity.Raca</class>
+		<class>br.com.jcf.vet.entity.Lembrete</class>
 		<properties>
 			<property name="openjpa.ConnectionDriverName" value="com.mysql.jdbc.Driver" />
+			<property name="openjpa.jdbc.DBDictionary" value="mysql"/>
 			<property name="openjpa.Log" value="DefaultLevel=WARN, Runtime=INFO, Tool=INFO, SQL=TRACE" />
 			<property name="openjpa.jdbc.SynchronizeMappings" value="buildSchema(ForeignKeys=true)"/>
 		</properties>

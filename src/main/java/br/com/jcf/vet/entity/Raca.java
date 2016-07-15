@@ -18,9 +18,8 @@ public class Raca extends GenericEntity<Long> {
 		
 	}
 
-	@Id
-	@TableGenerator(name="racaSeqTableGen", table="racaSeqTable")
-	@GeneratedValue(strategy=GenerationType.TABLE, generator="racaSeqTableGen")
+	@Id @Column(name="ID")
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Override
 	public Long getId() {
 		return id;
@@ -31,7 +30,7 @@ public class Raca extends GenericEntity<Long> {
 		this.id = id;
 	}
 
-	@Column
+	@Column(name="DS_RACA")
 	public String getDesc() {
 		return desc;
 	}

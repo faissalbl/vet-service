@@ -18,9 +18,8 @@ public class TipoAnimal extends GenericEntity<Long> {
 		
 	}
 
-	@Id
-	@TableGenerator(name="tipoAnimalSeqTableGen", table="tipoAnimalSeqTable")
-	@GeneratedValue(strategy=GenerationType.TABLE, generator="tipoAnimalSeqTableGen")
+	@Id @Column(name="ID")
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Override
 	public Long getId() {
 		return id;
@@ -31,7 +30,7 @@ public class TipoAnimal extends GenericEntity<Long> {
 		this.id = id;
 	}
 
-	@Column
+	@Column(name="DS_TIPO_ANIMAL")
 	public String getDesc() {
 		return desc;
 	}

@@ -1,5 +1,6 @@
 package br.com.jcf.vet.entity;
 
+import javax.persistence.Column;
 import javax.persistence.MappedSuperclass;
 import javax.persistence.Transient;
 import javax.persistence.Version;
@@ -14,7 +15,7 @@ public abstract class GenericEntity<T> {
 	
 	public abstract void setId(T id);
 	
-	@Version
+	@Version @Column(name="VERSION")
 	public Integer getVersion() {
 		return version;
 	}

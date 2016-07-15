@@ -37,9 +37,8 @@ public class Animal extends GenericEntity<Long> {
 		this.nome = nome;
 	}
 
-	@Id
-	@TableGenerator(name="animalSeqTableGen", table="animalSeqTable")
-	@GeneratedValue(strategy=GenerationType.TABLE, generator="animalSeqTableGen")
+	@Id @Column(name="ID")
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Override
 	public Long getId() {
 		return id;
@@ -50,7 +49,7 @@ public class Animal extends GenericEntity<Long> {
 		this.id = id;
 	}
 	
-	@Column
+	@Column(name="NOME")
 	public String getNome() {
 		return nome;
 	}
@@ -60,7 +59,7 @@ public class Animal extends GenericEntity<Long> {
 	}
 
 	@ManyToOne
-	@JoinColumn(name = "ID_TIPOANIMAL")
+	@JoinColumn(name = "ID_TIPO_ANIMAL")
 	public TipoAnimal getTipoAnimal() {
 		return tipoAnimal;
 	}
@@ -79,7 +78,7 @@ public class Animal extends GenericEntity<Long> {
 		this.raca = raca;
 	}
 
-	@Column
+	@Column(name = "COD_CHIP")
 	public String getCodChip() {
 		return codChip;
 	}
@@ -88,7 +87,7 @@ public class Animal extends GenericEntity<Long> {
 		this.codChip = codChip;
 	}
 
-	@Column @Temporal(TemporalType.DATE)
+	@Column(name="DT_NASCIMENTO") @Temporal(TemporalType.DATE)
 	public Date getDtNascimento() {
 		return dtNascimento;
 	}
