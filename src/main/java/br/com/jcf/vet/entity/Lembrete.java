@@ -11,13 +11,15 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.TableGenerator;
+import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-@Entity
+@Entity @Table(name="LEMBRETE")
 public class Lembrete extends GenericEntity<Long> {
 	
+	private static final long serialVersionUID = -3733618083692103573L;
+
 	protected Long id;
 
 	private String desc;

@@ -9,13 +9,18 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.TableGenerator;
+import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 
-@Entity
+@XmlRootElement(name="animal")
+@Entity @Table(name="ANIMAL")
 public class Animal extends GenericEntity<Long> {
 	
+	private static final long serialVersionUID = 3307232959650547535L;
+
 	protected Long id;
 	
 	private String nome;
@@ -32,11 +37,14 @@ public class Animal extends GenericEntity<Long> {
 		
 	}
 	
-	public Animal(Long id, String nome) {
+	public Animal(Long id, String nome, Long idRaca, String dsRaca, Long idTipoAnimal, String dsTipoAnimal) {
 		this.id = id;
 		this.nome = nome;
+		this.raca = new Raca(idRaca, dsRaca);
+		this.tipoAnimal = new TipoAnimal(idTipoAnimal, dsTipoAnimal);
 	}
 
+	@XmlElement(name="id")
 	@Id @Column(name="ID")
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Override
@@ -49,6 +57,7 @@ public class Animal extends GenericEntity<Long> {
 		this.id = id;
 	}
 	
+	@XmlElement(name="nome")
 	@Column(name="NOME")
 	public String getNome() {
 		return nome;
@@ -58,6 +67,7 @@ public class Animal extends GenericEntity<Long> {
 		this.nome = nome;
 	}
 
+	@XmlElement(name="tipoAnimal")
 	@ManyToOne
 	@JoinColumn(name = "ID_TIPO_ANIMAL")
 	public TipoAnimal getTipoAnimal() {
@@ -68,6 +78,7 @@ public class Animal extends GenericEntity<Long> {
 		this.tipoAnimal = tipoAnimal;
 	}
 
+	@XmlElement(name="raca")
 	@ManyToOne
 	@JoinColumn(name = "ID_RACA")
 	public Raca getRaca() {
@@ -78,6 +89,7 @@ public class Animal extends GenericEntity<Long> {
 		this.raca = raca;
 	}
 
+	@XmlElement(name="codChip")
 	@Column(name = "COD_CHIP")
 	public String getCodChip() {
 		return codChip;
@@ -87,6 +99,7 @@ public class Animal extends GenericEntity<Long> {
 		this.codChip = codChip;
 	}
 
+	@XmlElement(name="dtNascimento")
 	@Column(name="DT_NASCIMENTO") @Temporal(TemporalType.DATE)
 	public Date getDtNascimento() {
 		return dtNascimento;

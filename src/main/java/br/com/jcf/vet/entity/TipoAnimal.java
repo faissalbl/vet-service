@@ -5,11 +5,16 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.TableGenerator;
+import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 
-@Entity
+@XmlRootElement(name="tipoAnimal")
+@Entity @Table(name="TIPO_ANIMAL")
 public class TipoAnimal extends GenericEntity<Long> {
 	
+	private static final long serialVersionUID = -7060339027484059081L;
+
 	protected Long id;
 
 	private String desc;
@@ -17,7 +22,14 @@ public class TipoAnimal extends GenericEntity<Long> {
 	public TipoAnimal() {
 		
 	}
+	
+	public TipoAnimal(Long id, String desc) {
+		super();
+		this.id = id;
+		this.desc = desc;
+	}
 
+	@XmlElement(name="id")
 	@Id @Column(name="ID")
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Override
@@ -30,6 +42,7 @@ public class TipoAnimal extends GenericEntity<Long> {
 		this.id = id;
 	}
 
+	@XmlElement(name="desc")
 	@Column(name="DS_TIPO_ANIMAL")
 	public String getDesc() {
 		return desc;

@@ -10,6 +10,10 @@
 		<class>br.com.jcf.vet.entity.TipoAnimal</class>
 		<class>br.com.jcf.vet.entity.Raca</class>
 		<class>br.com.jcf.vet.entity.Lembrete</class>
+		<class>br.com.jcf.vet.entity.Endereco</class>
+		<class>br.com.jcf.vet.entity.Dono</class>
+		<class>br.com.jcf.vet.entity.AnimalDono</class>
+		<class>br.com.jcf.vet.entity.AnimalDonoId</class>
 		<properties>
 			<property name="openjpa.ConnectionDriverName" value="com.mysql.jdbc.Driver" />
 			<property name="openjpa.jdbc.DBDictionary" value="mysql"/>
