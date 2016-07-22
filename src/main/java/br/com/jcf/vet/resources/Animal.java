@@ -10,7 +10,6 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 import br.com.jcf.vet.entity.AnimalResultList;
-import br.com.jcf.vet.entity.RestResultList;
 import br.com.jcf.vet.manager.AnimalManager;
 
 @Path("/animal")

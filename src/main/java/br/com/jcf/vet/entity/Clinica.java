@@ -1,7 +1,5 @@
 package br.com.jcf.vet.entity;
 
-import java.util.Date;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,28 +7,28 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
 @Entity
-public class Dono extends GenericEntity<Long> {
+public class Clinica extends GenericEntity<Long> {
 	
-	private static final long serialVersionUID = -2426414970161957935L;
+	private static final long serialVersionUID = -6554065931424416647L;
 
 	private Long id;
 	
 	private String nome;
 	
-	private Long cpf;
-
-	private Date dtNascimento;
+	private String logomarca;
 	
 	private Long telefone;
 	
 	private String email;
 	
 	private Endereco endereco;
-
-	@Id @Column(name="ID") 
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	
+	private Boolean plantao24;
+	
+	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Override
 	public Long getId() {
 		return id;
@@ -50,22 +48,13 @@ public class Dono extends GenericEntity<Long> {
 		this.nome = nome;
 	}
 
-	@Column(name="CPF")
-	public Long getCpf() {
-		return cpf;
+	@Column(name="LOGOMARCA")
+	public String getLogomarca() {
+		return logomarca;
 	}
 
-	public void setCpf(Long cpf) {
-		this.cpf = cpf;
-	}
-
-	@Column(name="DT_NASCIMENTO")
-	public Date getDtNascimento() {
-		return dtNascimento;
-	}
-
-	public void setDtNascimento(Date dtNascimento) {
-		this.dtNascimento = dtNascimento;
+	public void setLogomarca(String logomarca) {
+		this.logomarca = logomarca;
 	}
 
 	@Column(name="TELEFONE")
@@ -87,7 +76,7 @@ public class Dono extends GenericEntity<Long> {
 	}
 
 	@OneToOne
-	@JoinColumn(name="ID_ENDERECO")
+	@JoinColumn(name="ENDERECO")
 	public Endereco getEndereco() {
 		return endereco;
 	}
@@ -95,4 +84,14 @@ public class Dono extends GenericEntity<Long> {
 	public void setEndereco(Endereco endereco) {
 		this.endereco = endereco;
 	}
+
+	@Column(name="PLANTAO_24")
+	public Boolean getPlantao24() {
+		return plantao24;
+	}
+
+	public void setPlantao24(Boolean plantao24) {
+		this.plantao24 = plantao24;
+	}
+
 }
