@@ -20,18 +20,13 @@ public class Animal extends GenericEntity<Long> {
 	
 	private static final long serialVersionUID = 3307232959650547535L;
 
-	protected Long id;
-	
-	private String nome;
-	
-	private TipoAnimal tipoAnimal;
-	
-	private Raca raca;
-	
-	private String codChip;
-	
+	protected Long id;	
+	private String nome;	
+	private TipoAnimal tipoAnimal;	
+	private Raca raca;	
+	private String codChip;	
 	private Date dtNascimento;
-
+	
 	public Animal() {
 		
 	}

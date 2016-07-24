@@ -15,7 +15,6 @@ public class Raca extends GenericEntity<Long> {
 	private static final long serialVersionUID = 2689779534830737909L;
 
 	protected Long id;
-
 	private String desc;
 	
 	public Raca() {

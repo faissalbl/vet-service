@@ -10,13 +10,9 @@ public class Veterinario extends GenericEntity<Long> {
 	private static final long serialVersionUID = -9194671952296695425L;
 
 	private Long crmv;
-	
-	private String nome;
-	
-	private String foto;
-	
-	private String especialidade;
-	
+	private String nome;	
+	private String foto;	
+	private String especialidade;	
 	private Boolean atendeDomicilio;
 
 	@Id @Column(name="CRMV", insertable = false, updatable = false)

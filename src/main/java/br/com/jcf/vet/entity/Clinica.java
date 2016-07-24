@@ -7,7 +7,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
-import javax.persistence.Table;
 
 @Entity
 public class Clinica extends GenericEntity<Long> {
@@ -15,20 +14,15 @@ public class Clinica extends GenericEntity<Long> {
 	private static final long serialVersionUID = -6554065931424416647L;
 
 	private Long id;
-	
-	private String nome;
-	
-	private String logomarca;
-	
-	private Long telefone;
-	
-	private String email;
-	
-	private Endereco endereco;
-	
+	private String nome;	
+	private String logomarca;	
+	private Long telefone;	
+	private String email;	
+	private Endereco endereco;	
 	private Boolean plantao24;
 	
-	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Id @Column(name="ID") 
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Override
 	public Long getId() {
 		return id;
@@ -76,7 +70,7 @@ public class Clinica extends GenericEntity<Long> {
 	}
 
 	@OneToOne
-	@JoinColumn(name="ENDERECO")
+	@JoinColumn(name="ID_ENDERECO")
 	public Endereco getEndereco() {
 		return endereco;
 	}

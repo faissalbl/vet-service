@@ -16,7 +16,6 @@ public class TipoAnimal extends GenericEntity<Long> {
 	private static final long serialVersionUID = -7060339027484059081L;
 
 	protected Long id;
-
 	private String desc;
 	
 	public TipoAnimal() {

@@ -11,20 +11,13 @@ public class Endereco extends GenericEntity<Long> {
 	
 	private static final long serialVersionUID = -4155226617933902026L;
 
-	private Long id;
-	
-	private String bairro;
-	
-	private String rua;
-	
-	private String numero;
-	
-	private String complemento;
-	
-	private String cidade;
-	
-	private String estado;
-	
+	private Long id;	
+	private String bairro;	
+	private String rua;	
+	private String numero;	
+	private String complemento;	
+	private String cidade;	
+	private String estado;	
 	private Long cep;
 
 	@Id @Column(name="ID") 

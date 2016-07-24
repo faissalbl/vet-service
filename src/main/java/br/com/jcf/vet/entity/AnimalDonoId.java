@@ -10,7 +10,6 @@ public class AnimalDonoId implements Serializable {
 	private static final long serialVersionUID = 6895204696246647389L;
 
 	private Long idAnimal;
-	
 	private Long idDono;
 	
 	public AnimalDonoId() {

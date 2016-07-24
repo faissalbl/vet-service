@@ -12,9 +12,7 @@ public class AnimalDono extends GenericEntity<AnimalDonoId> {
 	private static final long serialVersionUID = -3901178499115880914L;
 
 	private AnimalDonoId id;
-
-	private Animal animal;
-	
+	private Animal animal;	
 	private Dono dono;
 	
 	@Override

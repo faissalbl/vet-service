@@ -15,18 +15,12 @@ public class Dono extends GenericEntity<Long> {
 	
 	private static final long serialVersionUID = -2426414970161957935L;
 
-	private Long id;
-	
-	private String nome;
-	
+	private Long id;	
+	private String nome;	
 	private Long cpf;
-
-	private Date dtNascimento;
-	
-	private Long telefone;
-	
-	private String email;
-	
+	private Date dtNascimento;	
+	private Long telefone;	
+	private String email;	
 	private Endereco endereco;
 
 	@Id @Column(name="ID") 

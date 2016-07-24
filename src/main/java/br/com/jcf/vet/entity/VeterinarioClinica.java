@@ -27,7 +27,7 @@ public class VeterinarioClinica extends GenericEntity<VeterinarioClinicaId> {
 	}
 
 	@ManyToOne
-	@JoinColumn(name="CRMV")
+	@JoinColumn(name="ID_VETERINARIO")
 	public Veterinario getVeterinario() {
 		return veterinario;
 	}

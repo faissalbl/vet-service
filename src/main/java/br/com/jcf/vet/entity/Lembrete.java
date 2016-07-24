@@ -20,15 +20,10 @@ public class Lembrete extends GenericEntity<Long> {
 	private static final long serialVersionUID = -3733618083692103573L;
 
 	protected Long id;
-
-	private String desc;
-	
-	private Animal animal;
-	
-	private Frequencia frequencia;
-	
-	private Date data;
-	
+	private String desc;	
+	private Animal animal;	
+	private Frequencia frequencia;	
+	private Date data;	
 	private Boolean lido;
 	
 	public Lembrete() {

@@ -21,7 +21,7 @@ public class VeterinarioClinicaId implements Serializable {
 		this.idClinica = idClinica;
 	}
 	
-	@Column(name="CRMV", insertable = false, updatable = false)
+	@Column(name="ID_VETERINARIO", insertable = false, updatable = false)
 	public Long getIdVeterinario() {
 		return idVeterinario;
 	}
