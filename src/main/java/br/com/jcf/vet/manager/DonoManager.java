@@ -7,22 +7,23 @@ import javax.ejb.TransactionManagement;
 import javax.ejb.TransactionManagementType;
 import javax.inject.Inject;
 
-import br.com.jcf.vet.dao.AnimalDAO;
-import br.com.jcf.vet.entity.Animal;
+import br.com.jcf.vet.dao.DonoDAO;
+import br.com.jcf.vet.entity.Dono;
 
 @Stateless
 @TransactionManagement(TransactionManagementType.CONTAINER)
-public class AnimalManager extends GenericManager<Animal, AnimalDAO> {
+public class DonoManager extends GenericManager<Dono, DonoDAO> {
 
 	@Inject
-	private AnimalDAO animalDAO;
+	private DonoDAO donoDAO;
 	
-	public List<Animal> getAnimais() {
-		return animalDAO.getAnimais();
+	public List<Dono> getDonos() {
+		return donoDAO.getDonos();
 	}
 	
 	@Override
-	protected AnimalDAO getDAO() {
-		return animalDAO;
+	protected DonoDAO getDAO() {
+		return donoDAO;
 	}
+	
 }

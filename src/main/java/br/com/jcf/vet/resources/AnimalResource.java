@@ -8,19 +8,21 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import javax.ws.rs.core.Response.Status;
 
 import br.com.jcf.vet.entity.AnimalResultList;
 import br.com.jcf.vet.manager.AnimalManager;
 
 @Path("/animal")
-public class Animal {
+public class AnimalResource {
 	
 	@EJB
 	private AnimalManager animalManager;
 
-	@GET @Path("/test")
+	@GET 
+	@Path("/search")
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response test() {
+	public Response search() {
 		
 		//testing jpa
 		List<br.com.jcf.vet.entity.Animal> animais = animalManager.getAnimais();
@@ -28,21 +30,7 @@ public class Animal {
 		AnimalResultList animalResultList = new AnimalResultList();
 		animalResultList.setResultList(animais);
 		
-		return Response.status(200).entity(animalResultList).build();
-	}
-	
-	@GET @Path("/insert")
-	@Produces(MediaType.TEXT_HTML)
-	public String testInsert() {
-		animalManager.insertTestData();
-		return "testando inserir dados.";
-	}
-
-	@GET @Path("/delete")
-	@Produces(MediaType.TEXT_HTML)
-	public String testDelete() {
-		animalManager.deleteData();
-		return "testando deletar dados.";
+		return Response.status(Status.OK).entity(animalResultList).build();
 	}
 	
 }

@@ -5,7 +5,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 
+@XmlRootElement
 @Entity
 public class Endereco extends GenericEntity<Long> {
 	
@@ -19,7 +22,24 @@ public class Endereco extends GenericEntity<Long> {
 	private String cidade;	
 	private String estado;	
 	private Long cep;
+	
+	public Endereco() {
+		
+	}
+	
+	public Endereco(Long id, String bairro, String rua, String numero, String complemento,
+			String cidade, String estado, Long cep) {
+		this.id = id;
+		this.bairro = bairro;
+		this.rua = rua;
+		this.numero = numero;
+		this.complemento = complemento;
+		this.cidade = cidade;
+		this.estado = estado;
+		this.cep = cep;
+	}
 
+	@XmlElement
 	@Id @Column(name="ID") 
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Override
@@ -32,6 +52,7 @@ public class Endereco extends GenericEntity<Long> {
 		this.id = id;
 	}
 
+	@XmlElement
 	@Column(name="BAIRRO")
 	public String getBairro() {
 		return bairro;
@@ -41,6 +62,7 @@ public class Endereco extends GenericEntity<Long> {
 		this.bairro = bairro;
 	}
 
+	@XmlElement
 	@Column(name="RUA")
 	public String getRua() {
 		return rua;
@@ -50,6 +72,7 @@ public class Endereco extends GenericEntity<Long> {
 		this.rua = rua;
 	}
 
+	@XmlElement
 	@Column(name="NUMERO")
 	public String getNumero() {
 		return numero;
@@ -59,6 +82,7 @@ public class Endereco extends GenericEntity<Long> {
 		this.numero = numero;
 	}
 
+	@XmlElement
 	@Column(name="COMPLEMENTO")
 	public String getComplemento() {
 		return complemento;
@@ -68,6 +92,7 @@ public class Endereco extends GenericEntity<Long> {
 		this.complemento = complemento;
 	}
 
+	@XmlElement
 	@Column(name="CIDADE")
 	public String getCidade() {
 		return cidade;
@@ -77,6 +102,7 @@ public class Endereco extends GenericEntity<Long> {
 		this.cidade = cidade;
 	}
 
+	@XmlElement
 	@Column(name="ESTADO")
 	public String getEstado() {
 		return estado;
@@ -86,6 +112,7 @@ public class Endereco extends GenericEntity<Long> {
 		this.estado = estado;
 	}
 
+	@XmlElement
 	@Column(name="CEP")
 	public Long getCep() {
 		return cep;

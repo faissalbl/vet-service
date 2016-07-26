@@ -14,7 +14,7 @@ import javax.persistence.TemporalType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
-@XmlRootElement(name="animal")
+@XmlRootElement
 @Entity
 public class Animal extends GenericEntity<Long> {
 	
@@ -38,7 +38,7 @@ public class Animal extends GenericEntity<Long> {
 		this.tipoAnimal = new TipoAnimal(idTipoAnimal, dsTipoAnimal);
 	}
 
-	@XmlElement(name="id")
+	@XmlElement
 	@Id @Column(name="ID")
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Override
@@ -51,7 +51,7 @@ public class Animal extends GenericEntity<Long> {
 		this.id = id;
 	}
 	
-	@XmlElement(name="nome")
+	@XmlElement
 	@Column(name="NOME")
 	public String getNome() {
 		return nome;
@@ -61,7 +61,7 @@ public class Animal extends GenericEntity<Long> {
 		this.nome = nome;
 	}
 
-	@XmlElement(name="tipoAnimal")
+	@XmlElement
 	@ManyToOne
 	@JoinColumn(name = "ID_TIPO_ANIMAL")
 	public TipoAnimal getTipoAnimal() {
@@ -72,7 +72,7 @@ public class Animal extends GenericEntity<Long> {
 		this.tipoAnimal = tipoAnimal;
 	}
 
-	@XmlElement(name="raca")
+	@XmlElement
 	@ManyToOne
 	@JoinColumn(name = "ID_RACA")
 	public Raca getRaca() {
@@ -83,7 +83,7 @@ public class Animal extends GenericEntity<Long> {
 		this.raca = raca;
 	}
 
-	@XmlElement(name="codChip")
+	@XmlElement
 	@Column(name = "COD_CHIP")
 	public String getCodChip() {
 		return codChip;
@@ -93,7 +93,7 @@ public class Animal extends GenericEntity<Long> {
 		this.codChip = codChip;
 	}
 
-	@XmlElement(name="dtNascimento")
+	@XmlElement
 	@Column(name="DT_NASCIMENTO") @Temporal(TemporalType.DATE)
 	public Date getDtNascimento() {
 		return dtNascimento;
