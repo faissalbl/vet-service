@@ -13,8 +13,8 @@ public class DonoDAO extends GenericDAO<Dono> {
 		final StringBuilder sb = new StringBuilder();
 		sb.append("SELECT new Dono( ");
 		
-		sb.append("d.id, d.nome, d.cpf, d.dtNascimento, d.telefone, d.email, ");
-		sb.append("e.id, e.bairro, e.rua, e.numero, e.complemento, e.cidade, e.estado, e.cep ");
+		sb.append("d.id, d.nome, d.cpf, d.dtNascimento, d.telefone, d.email, e.id, ");
+		sb.append("e.bairro, e.rua, e.numero, e.complemento, e.cidade, e.estado, e.cep ");
 		
 		sb.append(") ");
 		sb.append("FROM Dono d ");

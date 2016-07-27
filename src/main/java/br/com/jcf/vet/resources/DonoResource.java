@@ -13,10 +13,8 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-import javax.ws.rs.core.Response.Status;
 
 import br.com.jcf.vet.entity.Dono;
-import br.com.jcf.vet.entity.DonoResultList;
 import br.com.jcf.vet.manager.DonoManager;
 
 @Path("/dono")
@@ -28,14 +26,9 @@ public class DonoResource {
 	@GET 
 	@Path("/search")
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response search() {
-		
+	public List<Dono> search() {
 		List<Dono> donos = donoManager.getDonos();
-		
-		DonoResultList donoResultList = new DonoResultList();
-		donoResultList.setResultList(donos);
-		
-		return Response.status(200).entity(donoResultList).build();
+		return donos;
 	}
 	
 	@POST 
@@ -44,14 +37,14 @@ public class DonoResource {
 	@Consumes(MediaType.APPLICATION_JSON)
 	public Response save(Dono dono) {
 		donoManager.save(dono);
-		return Response.status(Status.OK).build();
+		return Response.ok().build();
 	}
 
 	@DELETE 
 	@Path("/delete/{id}")
 	public Response delete(@PathParam("id") String id) {
 		donoManager.remove(new Dono(Long.parseLong(id)));
-		return Response.status(Status.OK).build();
+		return Response.ok().build();
 	}
 	
 }

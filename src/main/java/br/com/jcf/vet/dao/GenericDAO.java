@@ -19,7 +19,9 @@ public class GenericDAO<T extends GenericEntity<?>> {
 		return entity;
 	}
 	
+	@SuppressWarnings("unchecked")
 	public void remove(T entity) {
+		entity = (T) entityManager.find(entity.getClass(), entity.getId());
 		entityManager.remove(entity);
 	}
 }

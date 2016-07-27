@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
 @Entity
-public class Endereco extends GenericEntity<Long> {
+public class Endereco implements GenericEntity<Long> {
 	
 	private static final long serialVersionUID = -4155226617933902026L;
 
@@ -39,7 +39,7 @@ public class Endereco extends GenericEntity<Long> {
 		this.cep = cep;
 	}
 
-	@XmlElement
+	@XmlElement(type = Long.class)
 	@Id @Column(name="ID") 
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Override

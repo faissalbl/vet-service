@@ -15,7 +15,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
 @Entity
-public class Dono extends GenericEntity<Long> {
+public class Dono implements GenericEntity<Long> {
 	
 	private static final long serialVersionUID = -2426414970161957935L;
 
@@ -35,9 +35,9 @@ public class Dono extends GenericEntity<Long> {
 		this.id = id;
 	}
 	
-	public Dono(Long id, String nome, Long cpf, Date dtNascimento, Long telefone,
-			String email, Long idEndereco, String bairro, String rua, String numero,
-			String complemento, String cidade, String estado, Long cep) {
+	public Dono(Long id, String nome, Long cpf, Date dtNascimento, Long telefone, String email, 
+			Long idEndereco, String bairro, String rua, String numero, String complemento, 
+			String cidade, String estado, Long cep) {
 		this.id = id;
 		this.nome = nome;
 		this.cpf = cpf;
@@ -60,7 +60,7 @@ public class Dono extends GenericEntity<Long> {
 
 	@Override
 	public void setId(Long id) {
-		this.id = id;
+		this.id = (Long) id;
 	}
 
 	@XmlElement
