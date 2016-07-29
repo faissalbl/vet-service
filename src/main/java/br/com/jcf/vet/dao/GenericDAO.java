@@ -3,9 +3,9 @@ package br.com.jcf.vet.dao;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
-import br.com.jcf.vet.entity.GenericEntity;
+import br.com.jcf.vet.entity.IEntity;
 
-public class GenericDAO<T extends GenericEntity<?>> {
+public class GenericDAO<T extends IEntity<?>> {
 
 	@PersistenceContext(unitName="vet-pu")
 	protected EntityManager entityManager;

@@ -5,7 +5,7 @@ import java.io.Serializable;
 import javax.xml.bind.annotation.XmlTransient;
 
 @XmlTransient
-public interface GenericEntity<T> extends Serializable {
+public interface IEntity<T> extends Serializable {
 	
 	T getId();
 	

@@ -15,7 +15,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
 @Entity
-public class Dono implements GenericEntity<Long> {
+public class Dono implements IEntity<Long> {
 	
 	private static final long serialVersionUID = -2426414970161957935L;
 

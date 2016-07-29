@@ -4,9 +4,9 @@ import javax.ejb.TransactionAttribute;
 import javax.ejb.TransactionAttributeType;
 
 import br.com.jcf.vet.dao.GenericDAO;
-import br.com.jcf.vet.entity.GenericEntity;
+import br.com.jcf.vet.entity.IEntity;
 
-public abstract class GenericManager<T extends GenericEntity<?>, D extends GenericDAO<T>> {
+public abstract class GenericManager<T extends IEntity<?>, D extends GenericDAO<T>> {
 
 	protected abstract D getDAO();
 	

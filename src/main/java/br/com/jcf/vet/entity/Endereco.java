@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
 @Entity
-public class Endereco implements GenericEntity<Long> {
+public class Endereco implements IEntity<Long> {
 	
 	private static final long serialVersionUID = -4155226617933902026L;
 

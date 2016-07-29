@@ -7,6 +7,18 @@
 		<jta-data-source>vet-ds</jta-data-source>
 		<class>br.com.jcf.vet.entity.Endereco</class>
 		<class>br.com.jcf.vet.entity.Dono</class>
+		<class>br.com.jcf.vet.entity.AnimalDono</class>
+		<class>br.com.jcf.vet.entity.AnimalDonoId</class>
+		<class>br.com.jcf.vet.entity.Clinica</class>
+		<class>br.com.jcf.vet.entity.Consulta</class>
+		<class>br.com.jcf.vet.entity.Painel</class>
+		<class>br.com.jcf.vet.entity.Veterinario</class>
+		<class>br.com.jcf.vet.entity.VeterinarioClinica</class>
+		<class>br.com.jcf.vet.entity.VeterinarioClinicaId</class>
+		<class>br.com.jcf.vet.entity.Lembrete</class>
+		<class>br.com.jcf.vet.entity.Animal</class>
+		<class>br.com.jcf.vet.entity.TipoAnimal</class>
+		<class>br.com.jcf.vet.entity.Raca</class>
 		<properties>
 			<property name="openjpa.ConnectionDriverName" value="com.mysql.jdbc.Driver" />
 			<property name="openjpa.jdbc.DBDictionary" value="mysql"/>
