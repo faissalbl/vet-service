@@ -7,7 +7,9 @@ public class ResourceHelper {
 	public static ResponseBuilder addCorsHeaders(ResponseBuilder responseBuilder) {
 		return responseBuilder
 					.header("Access-Control-Allow-Origin", "*")
-					.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
+					.header("Access-Control-Allow-Headers", "origin, content-type, accept, authorization")
+					.header("Access-Control-Allow-Credentials", "true")
+					.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS, HEAD");
 	}
 
 }
