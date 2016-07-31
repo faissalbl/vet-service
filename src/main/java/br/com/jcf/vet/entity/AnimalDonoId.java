@@ -10,13 +10,13 @@ public class AnimalDonoId implements Serializable {
 	private static final long serialVersionUID = 6895204696246647389L;
 
 	private Long idAnimal;
-	private Long idDono;
+	private String idDono;
 	
 	public AnimalDonoId() {
 		
 	}
 	
-	public AnimalDonoId(Long idAnimal, Long idDono) {
+	public AnimalDonoId(Long idAnimal, String idDono) {
 		this.idAnimal = idAnimal;
 		this.idDono = idDono;
 	}
@@ -31,11 +31,11 @@ public class AnimalDonoId implements Serializable {
 	}
 
 	@Column(name="ID_DONO", insertable = false, updatable = false)
-	public Long getIdDono() {
+	public String getIdDono() {
 		return idDono;
 	}
 
-	public void setIdDono(Long idDono) {
+	public void setIdDono(String idDono) {
 		this.idDono = idDono;
 	}
 

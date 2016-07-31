@@ -21,6 +21,10 @@ public class DonoManager extends GenericManager<Dono, DonoDAO> {
 		return donoDAO.getDonos();
 	}
 	
+	public Dono getDono(String login) {
+		return donoDAO.getDono(login);
+	}
+	
 	@Override
 	protected DonoDAO getDAO() {
 		return donoDAO;

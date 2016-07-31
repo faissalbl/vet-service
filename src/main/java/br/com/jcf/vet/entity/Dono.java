@@ -10,16 +10,18 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
 @Entity
-public class Dono implements IEntity<Long> {
+public class Dono implements IEntity<String> {
 	
 	private static final long serialVersionUID = -2426414970161957935L;
 
-	private Long id;	
+	private String login;	
 	private String nome;	
 	private Long cpf;
 	private Date dtNascimento;	
@@ -31,14 +33,14 @@ public class Dono implements IEntity<Long> {
 		
 	}
 	
-	public Dono(Long id) {
-		this.id = id;
+	public Dono(String login) {
+		this.login = login;
 	}
 	
-	public Dono(Long id, String nome, Long cpf, Date dtNascimento, Long telefone, String email, 
+	public Dono(String login, String nome, Long cpf, Date dtNascimento, Long telefone, String email, 
 			Long idEndereco, String bairro, String rua, String numero, String complemento, 
 			String cidade, String estado, Long cep) {
-		this.id = id;
+		this.login = login;
 		this.nome = nome;
 		this.cpf = cpf;
 		this.dtNascimento = dtNascimento;
@@ -51,16 +53,15 @@ public class Dono implements IEntity<Long> {
 	}
 
 	@XmlElement
-	@Id @Column(name="ID") 
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Id @Column(name="LOGIN") 
 	@Override
-	public Long getId() {
-		return id;
+	public String getId() {
+		return login;
 	}
 
 	@Override
-	public void setId(Long id) {
-		this.id = (Long) id;
+	public void setId(String id) {
+		this.login = id;
 	}
 
 	@XmlElement
@@ -85,6 +86,7 @@ public class Dono implements IEntity<Long> {
 
 	@XmlElement
 	@Column(name="DT_NASCIMENTO")
+	@Temporal(TemporalType.DATE)
 	public Date getDtNascimento() {
 		return dtNascimento;
 	}
