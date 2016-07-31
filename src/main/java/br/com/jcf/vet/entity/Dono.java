@@ -84,7 +84,7 @@ public class Dono implements IEntity<String> {
 		this.cpf = cpf;
 	}
 
-	@XmlElement
+	@XmlElement(type = Date.class)
 	@Column(name="DT_NASCIMENTO")
 	@Temporal(TemporalType.DATE)
 	public Date getDtNascimento() {
